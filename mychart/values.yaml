@@ -1,0 +1,53 @@
+# flask-app deployment values
+flaskApp:
+  name: flaskappdeployment
+  repository: mohamed222/pythonapp
+  tag: latest
+  selector: flask   
+  replicas: 1
+  Port: 5000
+  #app service values
+  service:
+   name: appservice
+#mysql url values
+configMap:
+  name: hostname
+  key: database_url
+#mysql secrets values
+mysqlsecrets:
+  name: mysqlsecrets   
+selfsignedcert: 
+  name: myselfsignedcertificate
+#phpmyadmin values
+phpmyadmin:
+  replicas: 1
+  name: phpmyadmindeployment
+  selector: phpmyadmin
+  port: 80
+  #phpmyadmin service values
+  service:
+   name: pmaservice
+#mysqlstatefulset values
+mysqlstatefulset:
+  name: mysqlstatefulset
+  selector: mysql 
+  replicas: 1 
+  port: 3306
+  #mysql-service values
+  service:
+   name: mysqlservice 
+# pv values
+pv:
+  name: mysqlpv
+  storage: 2Gi
+  path: /data/mysql
+#pvc values 
+pvc:
+  name: mysqlpvc
+  storage: 1Gi
+#HPA values 
+HPA:
+ enabled: yes 
+ name: flaskapp-autoscaler
+ minReplicas: 1
+ maxReplicas: 10

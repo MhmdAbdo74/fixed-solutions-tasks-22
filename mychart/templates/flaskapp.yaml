@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        {{- with .Values.flaskApp }}
+  name: {{ .name }}
+  labels:
+   app: {{ .selector }}
+spec:
+  replicas: {{ .replicas }}
+  selector:
+    matchLabels:
+     app: {{ .selector }}
+  template:
+    metadata:
+      labels:  
+        app: {{ .selector }}
+    spec:
+      containers:
+      - name: flask-python   
+        image: {{ .repository }}:{{ .tag }}         
+        ports:
+        - containerPort: {{ .Port }}
+        env:
+             {{- with $.Values.mysqlsecrets }}
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: {{ .name  }}
+              key: user
+        - name: MYSQL_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: {{ .name  }}
+              key: password
+        - name: MYSQL_PORT
+          valueFrom: 
+            secretKeyRef:
+              name: {{ .name  }}
+              key: port  
+        - name: MYSQL_DBNAME
+          valueFrom: 
+            secretKeyRef:
+              name: {{ .name  }}
+              key: database
+             {{- end }} 
+        - name: MYSQL_HOST
+          valueFrom: 
+            configMapKeyRef:
+                     {{- with $.Values.configMap }}
+              name: {{ .name }}
+              key: {{  .key }}
+                     {{- end }}       
+              
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .service.name }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .selector }}
+  ports:
+  - protocol: TCP
+    port: {{ .Port }}
+    targetPort: {{ .Port }}
+        {{- end  }}
