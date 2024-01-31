@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.configMap.name }}
+data:
+  database_url: {{ .Values.mysqlstatefulset.service.name }}
+ 

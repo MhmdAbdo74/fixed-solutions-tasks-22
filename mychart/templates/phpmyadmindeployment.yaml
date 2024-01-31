@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  {{- with .Values.phpmyadmin }}
+  name: {{ .name }}
+  labels:
+    app: {{ .selector }}
+spec:
+  replicas: {{ .replicas }}
+  selector:
+    matchLabels:
+      app: {{ .selector}}
+  template:
+    metadata:
+      labels:
+        app: {{ .selector }}
+    spec:
+      containers:
+        - name: phpmyadmin
+          image: phpmyadmin/phpmyadmin
+          ports:
+            - containerPort: {{ .port }}
+          env:
+            - name: PMA_HOST
+              valueFrom:
+               configMapKeyRef:
+               {{- with $.Values.configMap }}
+                name: {{ .name }}
+                key: {{ .key }}
+               {{- end }}
+             {{- with $.Values.mysqlsecrets }}  
+            - name: PMA_PORT
+              value: "3306"
+            - name: PMA_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .name }}
+                  key: user
+            - name: PMA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{.name }}
+                  key: password
+             {{- end }}     
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .service.name }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .selector }}
+  ports:
+  - protocol: TCP
+    port: {{ .port }}
+    targetPort: {{ .port }}
+  
+  {{- end }}
