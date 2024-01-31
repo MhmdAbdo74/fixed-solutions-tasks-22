@@ -1,0 +1,18 @@
+version: '3'
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    restart: always
+    hostname: localhost
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost'
+    ports:
+      - "80:80"
+    volumes:
+      - ./gitlab/config:/etc/gitlab  #To  presist gitlab configuration
+      - ./gitlab/logs:/var/log/gitlab #To presist gitlab logs
+      - ./gitlab/data:/var/opt/gitlab #To presist gitlab data 
+
+      #sudo docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]" #To  put  root password
