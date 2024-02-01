@@ -121,9 +121,9 @@ sudo docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]"
 - `First, Add docker login credentials in gitlab to enable docker-compose to pull the flask image from the private dockerhub registry `
 ![1](https://github.com/0xZe/FS/assets/81789671/c1d07316-141a-4663-812e-6b70dfe26e63)
 - `Second, We need to configure and add a runner to our project to execute pipelines commans on it`
-![2](https://github.com/0xZe/FS/assets/81789671/12776d51-8648-41c4-9f76-95b50228af9c)
+![2](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/6b2f9d6e-5553-42ae-b541-b1310b85c95b)
 - `Our runner is active and running and ready to receive pipeline jobs`
-![3](https://github.com/0xZe/FS/assets/81789671/7ab2cb8b-7d0b-4e33-b773-0c1cb34b1344)
+![3](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/f5cf49a5-19de-4709-a88d-f44c2fb71d45)
 - `Third, Configure .gitlab-ci.yml file and write the pipeline`
 ![jj](https://github.com/0xZe/FS/assets/81789671/4c7560ef-9721-4cc6-ba70-5d1576f4e7a5)
 
