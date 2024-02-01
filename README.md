@@ -8,30 +8,6 @@
 #### Step 6: Write down the whole k8s files (deployments,configmaps, secrets, services, ingreses, etc) to a helm chart for easy deployment and management of the stack.
 #### Step 7: Auto deploy the stack via ArgoCD using our helm chart  previously taking into account to prevent any changes from the server side to be applied, only changes can be done from the helm chart that is pushed on the repository. 
 
-
-
-
-## Step 1: Write Dockerfile for flaskapp and create image and push it to private repo in dockerhub.
-
-- `this  Dockerfile used to build image  of Flask application and minimize size of image as much as possible` 
-
-![1](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/8cfe651b-db7e-4518-9496-3c28c80c29fe)
-- `size of image`
-![2](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/68c9a453-d772-4df3-8110-0bd64a758593)
-- `After building the image, Push it to the dockerhub registry in a private repo`
-![3]# DevOps task  in steps
-
-#### Step 1: Create Dockerfile for flask app and create image and push it to dockerhub in private repo . 
-#### Step 2: Create docker-compose.yml that contains thhree services flaskapp , MySQL  , phpmyadmin .
-#### Step 3: Create other docker-compose.yml contains jwilder/nginx-proxy to expose flask-app and phpmyadmin with a self signed certificates to enable https connection to phpmyadmin and flaskapp.
-#### Step 4: Deploy the flaskapp,MySQL and phpmyadmin to k8s minikube cluster and presist  MySQL data, Put Environment variables in Configmap and secret data in secrets, Acees applications from outside the minilube using the same domains and use self signed certificates as in docker-compose.
-#### Step 5: Install your own gitlab server using docker-compose and push previous code(docker-compose files and k8s files) on gitlab, and configure a pipeline with gitlab-ci file to auto deploy the stack on the docker  and the kubernetes.
-#### Step 6: Write down the whole k8s files (deployments,configmaps, secrets, services, ingreses, etc) to a helm chart for easy deployment and management of the stack.
-#### Step 7: Auto deploy the stack via ArgoCD using our helm chart  previously taking into account to prevent any changes from the server side to be applied, only changes can be done from the helm chart that is pushed on the repository. 
-
-
-
-
 ## Step 1: Write Dockerfile for flaskapp and create image and push it to private repo in dockerhub.
 
 - `this  Dockerfile used to build image  of Flask application and minimize size of image as much as possible` 
