@@ -57,7 +57,7 @@
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 
 # Display Certificate Information 
 openssl x509 -noout -text -in cert.pem
-
+```
 - `Second, Create docker-compose file that contain jw: `
 
 - `flask app on` `flask-app.local` `domain name`
