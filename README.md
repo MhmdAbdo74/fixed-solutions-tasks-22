@@ -111,7 +111,6 @@ openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out ro
 
 - `Assign pass to root user by command`
 ```bash
-# Create a Self-Signed Root CA
 sudo docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]"
 ```
 
