@@ -104,12 +104,16 @@ openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out ro
 ## Install gitlab locally with docker-compose
 
 - `We installed gitlab with a docker-compose file to presist data,configration and logs`
-![gl](https://github.com/0xZe/FS/assets/81789671/975160eb-146a-4cbe-870c-2ec2b1fdcea0)
+![gl](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/0ba358f2-4b02-4573-a746-ecc90ef6e6dd)
 
 - `Acess gitlab UI`
-![ui](https://github.com/0xZe/FS/assets/81789671/00defd95-e6d3-4688-a168-56ec27f6fafb)
+![ui](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/df200bd3-6684-498b-8cb4-40e4e1a75b76)
 
-- `install-gitlab.yml is in` `install-gitlab`
+- `Assign pass to root user by command`
+```bash
+# Create a Self-Signed Root CA
+sudo docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]"
+```
 
 ## Deploy docker-compose files by gitlab (.gitlab-ci.yml file)
 
