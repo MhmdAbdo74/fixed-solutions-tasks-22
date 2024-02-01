@@ -14,6 +14,7 @@
 ## Step 1: Write Dockerfile for flaskapp and create image and push it to private repo in dockerhub.
 
 - `this  Dockerfile used to build image  of Flask application and minimize size of image as much as possible` 
+
 ![1](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/8cfe651b-db7e-4518-9496-3c28c80c29fe)
 - `app.py and Dockerfile is in` `flask-app`
 - `After building the image, Push it to the dockerhub registry in a private repo`
