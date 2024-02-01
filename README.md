@@ -16,7 +16,8 @@
 - `this  Dockerfile used to build image  of Flask application and minimize size of image as much as possible` 
 
 ![1](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/8cfe651b-db7e-4518-9496-3c28c80c29fe)
-- `app.py and Dockerfile is in` `flask-app`
+- `size of image`
+![2](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/68c9a453-d772-4df3-8110-0bd64a758593)
 - `After building the image, Push it to the dockerhub registry in a private repo`
 ![3](https://github.com/0xZe/FS/assets/81789671/da9e951a-a9de-46a6-bc94-1db9609565ea)
 
