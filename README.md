@@ -50,22 +50,22 @@
 
 -`First, Create  self signed certificate: `
 
-
-
 ```bash
-# Generate a Self-Signed SSL Certificate and Private Key
-openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 
-# Display Certificate Information 
-openssl x509 -noout -text -in cert.pem
+# Create a Self-Signed Root CA
+openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out rootCA.crt
 ```
-- `Second, Create docker-compose file that contain jw: `
+- `Second, Create docker-compose file that contain jwilder/nginx-proxy `
+![5](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/03e75b69-3698-41ea-832d-c2f993ec5924)
 
-- `flask app on` `flask-app.local` `domain name`
-- `phpmyadmin on` `phpmyadmin.local` `domain name`
-
-- `proxy.yml is in` `docker-compose`
-![6](https://github.com/0xZe/FS/assets/81789671/ecf710ec-9078-47b1-83b2-51f0e69db1d8)
-
+- `add domains to /etc/hosts`
+- `flask app on` `flaskapp` `domain name`
+- `phpmyadmin on` `phpmyadmin` `domain name`
+![6](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/70923d36-b600-4f88-9e36-e988354741be)
+- `create nginx config file to route traffic to our domains through our app be accessible through https`
+![6](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/b2975896-1ecc-44d6-a84d-40907ec27ff1)
+ `
+- 'start container of jwilder/nginx-proxy`
+![7](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/5393261c-2112-4048-a005-33702514846a)
 
 - `Now we are able to access our apps on these domains`
 
