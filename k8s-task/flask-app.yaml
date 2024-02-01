@@ -14,9 +14,11 @@ spec:
       labels:
         app: flask
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: flask-python
-        image: mohamed222/pythonapp:latest
+        image: mohamed222/fixed-solution
         ports:
         - containerPort: 5000
         env:
