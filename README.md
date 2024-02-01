@@ -86,20 +86,20 @@ openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out ro
 - `We will do some steps: `
 
 - `1-` `Create .docker-config.json file`
-![dockerjson](https://github.com/0xZe/FS/assets/81789671/ba9d4fd6-f24c-47ec-bab1-65fe8a082fe1)
+![dockerjson](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/aceb2a10-fd0f-4955-8be0-a7b8601d28f1)
 - `Where auth attribute is` `base64 of dockerhub-username:dockerhub-password`
 
 - `2-` `Now,We can create our pull image secret`
-![pull-sec4](https://github.com/0xZe/FS/assets/81789671/0e2d5560-cd6d-4837-8d34-29a798912ff2)
+![pull-sec4](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/e97d6c62-4215-452c-8b54-359350402047)
 - `Where .dockerconfigjson attribute is` `base64-encoded-contents-of-.docker/config.json file`
 
 - `3-` `After creating the pull image secret,We must refer it into flask-deployment.yml`
-![pull-sec5](https://github.com/0xZe/FS/assets/81789671/b85edec8-a245-43de-bcd9-98379a648db6)
+![pull-sec5](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/4f3d790a-c7bf-4d9c-b87c-996d96549d59)
 - `Now our flask deployment is able to pull the flask image from the private repo`
 
 - `Second` `We need to add our minikube ip and our domain names to /etc/hosts to map these doamins to the minikube ingress controller to route them` 
-![Dns1](https://github.com/0xZe/FS/assets/81789671/09a2fc7a-2ece-42fc-9a04-8d7ad10f49a0)
-![Dns2](https://github.com/0xZe/FS/assets/81789671/f7840a91-d59c-41a4-a169-bdf6c0807da2)
+![Dns1](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/ffc21420-11de-48e5-a845-1b7667d0a21c)
+![Dns2](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/0d3516ad-59b7-442c-ba9c-baa43fcd8ad3)
 
 
 ## Deploy our applications on the minikube cluster

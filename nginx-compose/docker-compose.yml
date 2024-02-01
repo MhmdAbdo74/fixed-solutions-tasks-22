@@ -7,7 +7,7 @@ services:
       - "443:443"
 
     volumes:
-      - ./nginx-config/conf.d:/etc/nginx/nginx.conf:ro
+    #  - ./nginx-config/conf.d:/etc/nginx/nginx.conf:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - /etc/nginx/ssl:/etc/nginx/ssl:ro 
 
