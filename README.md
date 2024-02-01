@@ -66,15 +66,14 @@ openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out ro
 ![6](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/b2975896-1ecc-44d6-a84d-40907ec27ff1)
  `
 - 'start container of jwilder/nginx-proxy`
-![7](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/5393261c-2112-4048-a005-33702514846a)
+![7](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/b494aa9d-da39-47b6-9851-ea19afb2dbf3)
 
-- `Now we are able to access our apps on these domains`
+- `Now we are able to access our apps on these domains through https connection`
 
-![flask](https://github.com/0xZe/FS/assets/81789671/dcdde777-82b0-4c74-b20c-1dfc5d982fe4)
-![flaskssl](https://github.com/0xZe/FS/assets/81789671/625312c7-6415-46e9-9e24-d0be0d2c111a)
+![flask](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/1226a059-7c4b-4b78-bc42-860484caadd3)
 
-![php](https://github.com/0xZe/FS/assets/81789671/f876c640-7b4a-4745-b5da-7d86444561d0)
-![phpssl](https://github.com/0xZe/FS/assets/81789671/b577d078-ec81-41c0-be29-9c168ad6fb2c)
+![php](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/a98a4d2b-4c52-41db-ad0f-8ce4146d2ada)
+
 
 
 ## Step 4: Deploy the python-app,MySQL and phpmyadmin to k8s minikube cluster taking into account the persistence of MySQL data,put Environment variables in Configmap,acees applications from outside the minilube and use the same domains and use self signed certificates as in docker-compose.
