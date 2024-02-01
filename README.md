@@ -62,6 +62,7 @@ openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out ro
 - `phpmyadmin on` `phpmyadmin` `domain name`
 ![6](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/70923d36-b600-4f88-9e36-e988354741be)
 - `create nginx config file to route traffic to our domains through our app be accessible through https`
+
 ![6](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/b2975896-1ecc-44d6-a84d-40907ec27ff1)
  `
 - 'start container of jwilder/nginx-proxy`
