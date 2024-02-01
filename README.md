@@ -91,10 +91,10 @@ openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out ro
 
 - `Now, We can access our apps on the specific domains`
 
-![f](https://github.com/0xZe/FS/assets/81789671/7c9aa556-4e09-48d6-b27a-112185db829b)
+![f](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/32cdbd45-7947-49a2-a780-967df215e47c)
 
 
-![p](https://github.com/0xZe/FS/assets/81789671/22c9caf0-f6be-4f60-bcbb-5d9f44bd882b)
+![p](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/5418c9e0-9924-4cbc-9d5f-9c845892ba70)
 
 
 
