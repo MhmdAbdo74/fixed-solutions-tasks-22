@@ -40,7 +40,7 @@
 - `size of image`
 ![2](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/68c9a453-d772-4df3-8110-0bd64a758593)
 - `After building the image, Push it to the dockerhub registry in a private repo`
-![3](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/68c9a453-d772-4df3-8110-0bd64a758593)
+![3](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/b8a22c19-a5cd-4b6a-b8f3-7497c932ef40)
 
 ## Step 2: Create docker-compose.yml that contains the services python-app,MySQL and phpmyadmin.
 
