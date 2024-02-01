@@ -48,17 +48,17 @@
 
 ## Step 3: Create other docker-compose.yml contains jwilder/nginx-proxy to expose python-app and phpmyadmin with a self signed certificates.
 
--`First, Create 2 self signed certificates: `
+-`First, Create  self signed certificate: `
 
-- `The first certificate is to flask-app with domain name called` `flask-app.local`
-![flask-ssl](https://github.com/0xZe/FS/assets/81789671/51fab8e8-7c19-4198-ade2-163c5c049151)
-- `The second certificate is to phpmyadmin with domain name called` `phpmyadmin.local`
-![php-ssl](https://github.com/0xZe/FS/assets/81789671/63098cac-c2bb-40e5-a098-1312732f9396)
-- `Certs are in` `docker-compose/nginx-proxy/certs`
-- `But first we need to put these domains in our /etc/hosts file to map them to the proxy to route them`
-![dns](https://github.com/0xZe/FS/assets/81789671/c40f642f-700c-48c8-a33a-8215ca820af1)
 
-- `Second, Create proxy file with the created ssl to be able to access our apps: `
+
+```bash
+# Generate a Self-Signed SSL Certificate and Private Key
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 
+# Display Certificate Information 
+openssl x509 -noout -text -in cert.pem
+
+- `Second, Create docker-compose file that contain jw: `
 
 - `flask app on` `flask-app.local` `domain name`
 - `phpmyadmin on` `phpmyadmin.local` `domain name`
