@@ -80,26 +80,22 @@ openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out ro
 
 ## Deploy our applications on the minikube cluster
 
-- `All k8s files are in` `gitlab-k8s`
+- `All k8s files are in` `k8s-task`
 
-![1](https://github.com/0xZe/FS/assets/81789671/73ee7efb-c756-47e1-9e79-bc40de7a438b)
-![2](https://github.com/0xZe/FS/assets/81789671/e8438b69-893b-40f3-826f-8e419fa82cd3)
-![3](https://github.com/0xZe/FS/assets/81789671/b2437a9b-f816-428e-82e6-51943adc09bb)
-![4](https://github.com/0xZe/FS/assets/81789671/be339eb5-2708-4114-826b-545393a8ec0b)
-![5](https://github.com/0xZe/FS/assets/81789671/4358b038-1a0d-4494-90e2-eac02209cd8a)
-![6](https://github.com/0xZe/FS/assets/81789671/51f26b2b-58e3-452b-9755-4cae1db12873)
-![7](https://github.com/0xZe/FS/assets/81789671/c4f3d5d9-1928-4666-8737-f29d7377d0a2)
-
+![1](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/4a18f4a4-2185-4702-888b-de275dc2c863)
+![2](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/fc399360-84dc-40bb-bbb0-d704011e4f3d)
+![3](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/5b9093e8-8dcd-4cc3-b56c-1d6066b73119)
+![4](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/80fe69b8-f357-4672-a04a-e17a08169493)
 
 ## Acess our apps
 
 - `Now, We can access our apps on the specific domains`
 
 ![f](https://github.com/0xZe/FS/assets/81789671/7c9aa556-4e09-48d6-b27a-112185db829b)
-![fssl](https://github.com/0xZe/FS/assets/81789671/f16176ff-0cbf-418f-a2d1-7f2b60e869d2)
+
 
 ![p](https://github.com/0xZe/FS/assets/81789671/22c9caf0-f6be-4f60-bcbb-5d9f44bd882b)
-![pssl](https://github.com/0xZe/FS/assets/81789671/1c43e15d-4355-4bcb-bd2a-af55fcfaf919)
+
 
 
 
