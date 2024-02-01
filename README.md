@@ -44,8 +44,7 @@
 
 ## Step 2: Create docker-compose.yml that contains the services python-app,MySQL and phpmyadmin.
 
-- `db.yml and flask-php.yml files are in` `docker-compose`
-![4](https://github.com/0xZe/FS/assets/81789671/bdd26578-d2c5-47bc-8d8c-c4f6ddceb8c6)
+![4](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/530bab01-e6f1-4531-a0fb-53f2b720d8a2)
 
 ## Step 3: Create other docker-compose.yml contains jwilder/nginx-proxy to expose python-app and phpmyadmin with a self signed certificates.
 
