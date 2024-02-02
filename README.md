@@ -127,7 +127,7 @@ sudo docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]"
 
 ## Step 6: Write down the whole k8s files (deployments,configmaps, secrets, services, ingreses, etc) to a helm chart, in other meaning, create a helm chart for the stack.
 
-- `Stack Helm chart files is in` `mychartchart`
+- `Stack Helm chart files is in` `mychart`
 
 ## Step 7: Auto deploy the stack via ArgoCD using the helm chart that we wrote it down previously taking into account to prevent any changes from the server side to be applied, only changes can be done from the helm chart that is pushed on the repository. 
 
