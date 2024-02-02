@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+  labels:
+    app: flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      containers:
+      - name: flask-python
+        image: mohamed222/pythonapp:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: user
+        - name: MYSQL_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        - name: MYSQL_PORT
+          valueFrom: 
+            secretKeyRef:
+              name: mysql-secret
+              key: port  
+        - name: MYSQL_HOST
+          valueFrom: 
+            configMapKeyRef:
+              name: hostname
+              key: database_url
+        - name: MYSQL_DBNAME
+          valueFrom: 
+            secretKeyRef:
+              name: mysql-secret
+              key: database
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+spec:
+  type: ClusterIP
+  selector:
+    app: flask 
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
