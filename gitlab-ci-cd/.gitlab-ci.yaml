@@ -15,7 +15,7 @@ deploy-docker:
         - shell 
     before_script:
 #  to enable the pull of the private flask image from hub
- #   - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
+     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
      - cd  Docker
     script:
         - docker compose -f main-compose/docker-compose.yml down -d
