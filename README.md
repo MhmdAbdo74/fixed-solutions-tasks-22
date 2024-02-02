@@ -37,10 +37,7 @@ openssl req -x509 -sha256 -days 1825 -newkey rsa:2048 -keyout rootCA.key -out ro
 - `flask app on` `flaskapp` `domain name`
 - `phpmyadmin on` `phpmyadmin` `domain name`
 ![6](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/70923d36-b600-4f88-9e36-e988354741be)
-- `create nginx config file to route traffic to our domains through our app be accessible through https`
-
-![6](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/b2975896-1ecc-44d6-a84d-40907ec27ff1)
- `
+ 
 - 'start container of jwilder/nginx-proxy`
 ![7](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/b494aa9d-da39-47b6-9851-ea19afb2dbf3)
 
@@ -124,88 +121,36 @@ sudo docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]"
 ![2](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/6b2f9d6e-5553-42ae-b541-b1310b85c95b)
 - `Our runner is active and running and ready to receive pipeline jobs`
 ![3](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/f5cf49a5-19de-4709-a88d-f44c2fb71d45)
-- `Third, Configure .gitlab-ci.yml file and write the pipeline`
-![jj](https://github.com/0xZe/FS/assets/81789671/4c7560ef-9721-4cc6-ba70-5d1576f4e7a5)
-
-- `All docker-compose files,scripts and .gitlab-ci.yml file is on` `gitlab-compose`
-
-- `Now,We are ready to deploy our docker-compose files`
-- `As soon as the docker compose files and .gitlab-ci.yml file are pushed to the gitlab repo, The pipeline will start`
-- `Pipeline ran successfully`
-![4](https://github.com/0xZe/FS/assets/81789671/5c1e7326-c785-4fdf-82ec-5cd6805aea76)
-
-- `Now, We can access our apps from Environmnent tab`
-![5](https://github.com/0xZe/FS/assets/81789671/f6c53562-6e88-4a58-b013-d8489a311f2f)
-
-
-## Deploy K8s files by gitlab (.gitlab-ci.yml file)
-
-## Prerequisites
-
-- `Before we deploy our k8s files, We need to configure some things: `
-
-- `First, Create a dedicated service account with a dedicated permissions to use this service account to aceess minikube cluster and deploy k8s files`
-![sa](https://github.com/0xZe/FS/assets/81789671/ad21bb7f-6c6b-46de-8062-8ffb73fb44ba)
-
-- `Second,Put the token of the secret file in kubeconfig file to be able to access the minikube cluster`
-- `To do that, We need first to create a secret token to the service account`
-![sa-t](https://github.com/0xZe/FS/assets/81789671/4322854c-3703-4d0d-815b-bcbbceb9e7a1)
-
-- `Then we need the token from this secret file and convert it to bas64`
-![4](https://github.com/0xZe/FS/assets/81789671/88d6cfa8-2d98-4f89-9f3b-882f1c1a7d3b)
-
-- `Encode the token to base64`
-![5](https://github.com/0xZe/FS/assets/81789671/31333514-56cb-4ad1-8f28-906341d8b60a)
-
-- `Finally, Add the encoded bas64 token to kubeconfig file`
-![6](https://github.com/0xZe/FS/assets/81789671/efcaa08f-77d7-4ed5-af04-4b82d9b2d2e1)
-- `Now we have a kubeconfig file and can use it to access the minikube cluster and deploy k8s files`
-
-- `Add this kubeconfig file to gitlab to use it in our pipeline`
-![7](https://github.com/0xZe/FS/assets/81789671/77c6d6b4-2c27-4785-83a6-8d60bb2a13ef)
-
-- `gitlab service account files are in` `gitlab-serviceaccount`
-
-- `We need also to configure and add a runner to our project to execute pipelines commans on it`
-![8](https://github.com/0xZe/FS/assets/81789671/c58f2596-5e85-43a5-8270-c1e06cd7fe01)
-- `Our runner is active and running and ready to receive pipeline jobs`
-![9](https://github.com/0xZe/FS/assets/81789671/f256325c-2189-4233-a410-dd91e94780af)
-
-- `All k8s files,scripts and .gitlab-ci.yml file is on` `gitlab-k8s`
-
-- `Now,We are ready to deploy our k8s files`
-- `As soon as the k8s files and .gitlab-ci.yml file are pushed to the gitlab repo, The pipeline will start`
-- `Pipeline ran successfully`
-![10](https://github.com/0xZe/FS/assets/81789671/69f60215-c4c4-4da9-b811-0357e8c57be9)
-
-- `Now, We can access our apps from Environmnent tab`
-![11](https://github.com/0xZe/FS/assets/81789671/6821b7b8-483e-453d-9ebd-61a7e09e5056)
+- `Third, Configure .gitlab-ci.yml file and write the pipeline to deploy our  app in docker and k8s ` 
+![jj](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/513b2ddc-81f1-4682-abba-2944211f2d42)
 
 
 ## Step 6: Write down the whole k8s files (deployments,configmaps, secrets, services, ingreses, etc) to a helm chart, in other meaning, create a helm chart for the stack.
 
-- `Stack Helm chart files is in` `stack-chart`
+- `Stack Helm chart files is in` `mychartchart`
 
 ## Step 7: Auto deploy the stack via ArgoCD using the helm chart that we wrote it down previously taking into account to prevent any changes from the server side to be applied, only changes can be done from the helm chart that is pushed on the repository. 
 
 - `First, we need to install ArgoCD on our minikube cluster`
-![install argocd in minikube cluster](https://github.com/0xZe/FS/assets/81789671/e106b3c8-b23d-4534-9a59-52c31b9504b0)
-
-- `Then, Froward ArgoCDd service to port 8080 to access ArgoCD UI`
-![froward argocd to port 8080 to access ArgoCD UI](https://github.com/0xZe/FS/assets/81789671/42e77bc5-537b-4ee5-bd97-97a67cd90489)
-
-- `Finally, Get ArgoCD password to access the UI`
-![get password to access the ui](https://github.com/0xZe/FS/assets/81789671/03bee886-8620-42ae-b59c-f4df2106e4f6)
-![access ui](https://github.com/0xZe/FS/assets/81789671/3a91032c-a231-46ae-b0b2-8d91e6ca2611)
-
-- `After ArgoCD working, We can now apply ArgoCD-App.yml to configure and synchronize ArgoCD with Helm chart repo`
-![apply argocd yml to configure argocd with helm cahrt repo](https://github.com/0xZe/FS/assets/81789671/40f2abdc-36f6-41b1-b21a-af96be7419b6)
-
-- `ArgoCD-App.yml file is in` `ArgoCD`
+```bash
+#Create a new namespace for ArgoCD:
+kubectl create namespace argocd
+```
+```bash
+#Apply the ArgoCD installation manifests:
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+```bash
+#To forward traffic of this service in our  local machine to access ArgoCD from browser 
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+```bash
+#Retrieve Default Login Credentials
+kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
 
 - `After doing that ArgoCD become synchronized with Helm chart repo and changes in applications happens only from Helm chart repo`
-![sync happened and application is healthy](https://github.com/0xZe/FS/assets/81789671/04d61607-692e-428d-9a27-f438afac9ae5)
-![w1](https://github.com/0xZe/FS/assets/81789671/8c7d591b-1376-4822-994e-42be2e1731c3)
-![w2](https://github.com/0xZe/FS/assets/81789671/eb68c9aa-f616-4315-a6fb-413b582c98d4)
+![w1](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/fba0253a-8252-4626-bb39-b775a4f974f2)
+![w2](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/b1567c53-2f54-4887-b762-c5995d8b43b6)
 
 
