@@ -1,0 +1,55 @@
+variables:
+   #Docker environment
+   FLASK_ENDPOINT: https://flaskapp
+   PHP_ENDPOINT: https://phpmyadmin
+   #ingress environment
+   FLASK_APP: https://app.example.com
+   PHP_MyAdmin: https://phpmyadmin.example.com
+
+stages:
+    - deploy_docker
+    - deploy_k8s
+deploy-docker:
+    stage: deploy_docker
+    tags:
+        - shell 
+    before_script:
+#  to enable the pull of the private flask image from hub
+ #   - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
+     - cd  Docker
+    script:
+        - docker compose -f main-compose/docker-compose.yml down -d
+        - docker compose -f /nginx-compose/nginxcompose.yaml down -d 
+
+        - docker compose -f main-compose/docker-compose.yml up -d
+        - slepp 120
+        - docker compose -f /nginx-compose/nginxcompose.yaml up -d 
+        - sleep 120 
+        - docker ps
+deploy-k8s:
+    tags:
+        - shell 
+
+    stage: deploy_k8s
+    before_script:    
+     - cd  ../k8s-task 
+     - minikube start
+    script:
+       - kubectl apply -f pv.yaml -f pvc.yaml -f secret.yaml   -f cert.yaml 
+       - chmod +x waitscript.sh 
+       - ./waitscript.sh
+       - kubectl apply -f mysql-statefulset.yaml -f  dbconfigmap.yaml -f phpmyadmin.yaml -f flask-app.yaml -f autoscaling.yaml  
+       - ./waitscript.sh
+       -  kubectl apply -f phpmyadminingress.yaml -f  flaskappingress.yaml
+       - sleep 180
+       - kubectl get all -n default 
+
+    environment:
+     name: Flask-app-ingress
+     url: $FLASK_APP
+     name: phpmyadmin-ingress
+     url: $PHP_MyAdmin
+     name: flask-app
+     url: $FLASK_APP
+     name: php-myadmin
+     url: $PHP_MyAdmin
