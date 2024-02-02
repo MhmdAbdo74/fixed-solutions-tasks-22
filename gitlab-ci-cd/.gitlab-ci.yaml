@@ -33,7 +33,7 @@ deploy-k8s:
     stage: deploy_k8s
     before_script:    
      - cd  ../k8s-task 
-     - minikube start
+     - export KUBECONFIG=$KUBE_CONFIG
     script:
        - kubectl apply -f pv.yaml -f pvc.yaml -f secret.yaml   -f cert.yaml 
        - chmod +x waitscript.sh 
