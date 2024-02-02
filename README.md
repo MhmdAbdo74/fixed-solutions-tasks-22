@@ -122,7 +122,7 @@ sudo docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]"
 - `Our runner is active and running and ready to receive pipeline jobs`
 ![3](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/f5cf49a5-19de-4709-a88d-f44c2fb71d45)
 - `Third, Configure .gitlab-ci.yml file and write the pipeline to deploy our  app in docker and k8s ` 
-![jj](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/513b2ddc-81f1-4682-abba-2944211f2d42)
+![jj](https://github.com/MhmdAbdo74/fixed-solutions-tasks-22/assets/94086189/44e84742-2ebe-4068-ba73-eebff69f45d2)
 
 
 ## Step 6: Write down the whole k8s files (deployments,configmaps, secrets, services, ingreses, etc) to a helm chart, in other meaning, create a helm chart for the stack.
